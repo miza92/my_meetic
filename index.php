@@ -32,6 +32,9 @@
 			</nav>
 		</header>
 		<div class="container">
+			<div class="container1">
+				<h4>Find out what's going on in the world in real time</h4>
+			</div>
 			<div id="login-row" class="row justify-content-center align-items-center">
 				<div id="login-column" class="col-md-6">
 					<div class="box">
@@ -56,12 +59,11 @@
 									<input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
 								</div>
 							</form>
-							<div>
-							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			<br /><br /><br /><br /><br /><br /><br /><br />
 		</div>
 	</body>
 </html> 	
