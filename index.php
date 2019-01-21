@@ -22,7 +22,7 @@
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				<div class="navbar-brand">
 					<img src="./Images/logo.png" style="width: 40px; height: 40px;">
-					<a class="btn btn-primary" href="" role="button">Register</a>
+					<a class="btn btn-primary" href="Register.php" role="button">Register</a>
 					<a class="btn btn-primary" href="">Contact us</a>
 				</div>
 				<form class="form-inline my-2 my-lg-0">
@@ -43,7 +43,7 @@
                     <div class="shape6"></div>
                     <div class="shape7"></div>
 						<div class="float">
-							<form class="form" action="">
+							<form class="form" action="login.php">
 								<div class="form-group">
 									<label for="username" class="text-white">Username:</label><br>
 									<input type="text" name="username" id="username" class="form-control">
@@ -56,6 +56,8 @@
 									<input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
 								</div>
 							</form>
+							<div>
+							</div>
 						</div>
 					</div>
 				</div>
