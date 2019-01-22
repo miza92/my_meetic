@@ -20,7 +20,7 @@
 		<header>
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				<div class="navbar-brand">
-					<img src="./Images/logo.png" style="width: 40px; height: 40px;">
+					<img src="./img/logo.png" style="width: 40px; height: 40px;">
 					<a class="btn btn-primary" href="register.php" role="button">Register</a>
 					<a class="btn btn-primary" href="">Contact us</a>
 				</div>
@@ -45,19 +45,32 @@
                     <div class="shape6"></div>
                     <div class="shape7"></div>
 						<div class="float">
-							<form class="form" action="login.php">
+							<form class="form" action="home.php">
 								<div class="form-group">
 									<label for="username" class="text-white">Username:</label><br>
 									<input type="text" name="username" id="username" class="form-control">
 								</div>
 								<div class="form-group">
 									<label for="password" class="text-white">Password:</label><br>
-									<input type="text" name="password" id="password" class="form-control">
+									<input type="password" name="password" id="password" class="form-control">
 								</div>
 								<div class="form-group">
 									<input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
 								</div>
 							</form>
+                            <?php include 'log_in.php';
+
+                            if (isset($_POST['username']) && isset($_POST['password'])) {
+                                $login = new log_in();
+                                $true = $login->log();
+                                if($true == true) {
+                                    header("Location: home.php");
+                                }
+                                else {
+                                    echo "<script>alert('Invalid username or password')</script>";
+                                }
+                            }
+                            ?>
 						</div>
 					</div>
 				</div>

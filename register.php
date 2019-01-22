@@ -20,7 +20,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="navbar-brand">
                 <img src="./img/logo.png" style="width: 40px; height: 40px;">
-                <a class="btn btn-primary" href="register.php" role="button">Login</a>
+                <a class="btn btn-primary" href="index.php" role="button">Login</a>
                 <a class="btn btn-primary" href="index.php">Home</a>
             </div>
             <form class="form-inline my-2 my-lg-0">
@@ -142,9 +142,7 @@
 		{
             $register = new register();
             $register->inscription();
-		}
-		else{
-			echo "FAIL !!!"; 
+            echo "<script>alert('You have successfully registered !')</script>";
 		}
         ?>
 		</div>
