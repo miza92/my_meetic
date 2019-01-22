@@ -1,0 +1,17 @@
+body {
+    margin: 0; 
+}
+
+.left {
+
+    background: #1da1f2;
+    overflow: hidden;
+    position: relative;
+    height : 100%; 
+}
+
+div h2{
+
+    color: white; 
+    font-weight: bold;
+}
