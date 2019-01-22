@@ -41,9 +41,9 @@ class log_in
         $sql->execute();
 
         $pass = $sql->fetch();
-        $regist_password = $pass['password'];
+        $is_password = $pass['password'];
 
-        if (password_verify($pwd, $regist_password)) {
+        if (password_verify($pwd, $is_password)) {
             echo 'Le mot de passe est valide !';
             session_start();
             $_SESSION['username'] = $username;

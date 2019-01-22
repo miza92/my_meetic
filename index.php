@@ -45,7 +45,7 @@
                     <div class="shape6"></div>
                     <div class="shape7"></div>
 						<div class="float">
-							<form class="form" action="home.php">
+							<form class="form" action="index.php" method="post">
 								<div class="form-group">
 									<label for="username" class="text-white">Username:</label><br>
 									<input type="text" name="username" id="username" class="form-control">
