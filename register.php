@@ -11,14 +11,27 @@
 		<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 		<!-- CDN -->
 		<!-- Bootstrap CSS --> 
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+              integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+              crossorigin="anonymous">
 		<!-- js scipts-->
 		<script src="./js/script.js"></script>
 		<title>Tweet academie</title>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="navbar-brand">
+                <img src="./img/logo.png" style="width: 40px; height: 40px;">
+                <a class="btn btn-primary" href="register.php" role="button">Login</a>
+                <a class="btn btn-primary" href="index.php">Home</a>
+            </div>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="search">
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">search</button>
+            </form>
+        </nav>
 	</head>
 	<body class="body">
 		<div class="container">
-			<form class="form-horizontal" role="form" method="POST" action="register.php">
+			<form class="form-horizontal" role="form" method="post" action="register.php">
 				<div class="row">
 					<div class="col-md-3"></div>
 					<div class="col-md-6">
@@ -35,7 +48,8 @@
 							<div class="input-group mb-2 mr-sm-2 mb-sm-0">
 								<div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
 								<input type="text" name="username" class="form-control" id="username"
-								placeholder="Please enter your @username" minlength="4" maxlength="40"  required autofocus>
+								placeholder="Please enter your @username" minlength="4" maxlength="40"
+                                       required autofocus>
 							</div>
 						</div>
 					</div>
@@ -43,7 +57,8 @@
 						<div class="form-control-feedback">
 							<span class="text-danger align-middle">
 								Veuillez remplir tous les Champs requis *
-							<!-- Les champs doivent contenir une langeur minimin de 4 caractères et maximum de 40 caractères: -->
+							<!-- Les champs doivent contenir une langeur minimin
+							de 4 caractères et maximum de 40 caractères: -->
 							</span>
 						</div>
 					</div>
@@ -57,7 +72,8 @@
 							<div class="input-group mb-2 mr-sm-2 mb-sm-0">
 								<div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
 								<input type="text" name="display_name" class="form-control" id="display_name"
-								placeholder="Please enter your display_name" minlength="4" maxlength="40" required autofocus>
+								placeholder="Please enter your display_name" minlength="4" maxlength="40"
+                                       required autofocus>
 							</div>
 						</div>
 					</div>
@@ -77,7 +93,7 @@
 						<div class="form-group">
 							<div class="input-group mb-2 mr-sm-2 mb-sm-0">
 								<div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
-								<input type="email" name="email" class="form-control" id="email" placeholder="vous@exemple.com" required autofocus>
+								<input type="email" name="email" class="form-control" id="email" required autofocus>
 							</div>
 						</div>
 					</div>
@@ -97,7 +113,8 @@
 						<div class="form-group has-danger">
 							<div class="input-group mb-2 mr-sm-2 mb-sm-0">
 								<div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
-								<input type="password" name="password" class="form-control" id="password" placeholder="Renter votre mot de passe" minlength="4" maxlength="40" required>
+								<input type="password" name="password" class="form-control" id="password"
+                                       minlength="4" maxlength="40" required>
 							</div>
 						</div>
 					</div>
@@ -112,35 +129,16 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-3 field-label-responsive">
-						<label for="phone">Phone</label>
-					</div>
-					<div class="col-md-6">
-						<div class="form-group">
-							<div class="input-group mb-2 mr-sm-2 mb-sm-0">
-								<div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
-								<input type="tel" name="phone" class="form-control" id="phone" pattern="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$" minlength="10" maxlength="14">            
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3">
-						<div class="form-control-feedback">
-							<span class="text-danger align-middle">
-								<!-- Put name validation error messages here -->
-							</span>
-						</div>
-					</div>
-				</div>
-				<div class="row">
 					<div class="col-md-3"></div>
 					<div class="col-md-6">
-						<button type="submit" class="btn btn-success"><i class="fa fa-user-plus"></i> Inscription</button>
+						<button type="submit" class="btn btn-success"><i class="fa fa-user-plus"></i>
+                            Inscription</button>
 					</div>
 				</div>
 			</form>
 			<?php include 'log_in.php';
 		if (isset($_POST['display_name']) && isset($_POST['username']) 
-		&& isset($_POST['password']) && isset($_POST['phone']) && isset($_POST['email']))
+		&& isset($_POST['password']) && isset($_POST['email']))
 		{
             $register = new register();
             $register->inscription();
