@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8"><!--Encodage latin de la page -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta name="description" content="Réseau social"/>
+		<meta name="description" content="Site de rencontre"/>
 		<link rel="icon" href="./img/logo.png"/>
 		<link rel="stylesheet" type="text/css" href="./css/styles.css">
 		<link rel="stylesheet" type="text/css" href="./css/bootstrap-grid.min.css">
@@ -20,7 +20,7 @@
 		<header>
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				<div class="navbar-brand">
-					<img src="./img/logo.png" style="width: 40px; height: 40px;">
+					<img src="./Images/logo.png" style="width: 40px; height: 40px;">
 					<a class="btn btn-primary" href="register.php" role="button">Register</a>
 					<a class="btn btn-primary" href="">Contact us</a>
 				</div>
