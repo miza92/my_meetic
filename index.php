@@ -4,7 +4,7 @@
 		<meta charset="utf-8"><!--Encodage latin de la page -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta name="description" content="Site de rencontre"/>
-		<link rel="icon" href="./Images/logo.png"/>
+		<link rel="icon" href="./img/logo.png"/>
 		<link rel="stylesheet" type="text/css" href="./css/styles.css">
 		<link rel="stylesheet" type="text/css" href="./css/bootstrap-grid.min.css">
 		<link rel="stylesheet" type="text/css" href="./css/bootstrap-reboot.min.css">
