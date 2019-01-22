@@ -12,7 +12,6 @@
 		<!-- CDN -->
 		<!-- Bootstrap CSS --> 
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-		<link rel="stylesheet" type="text/css" href=".css/cinema.css">
 		<!-- js scipts-->
 		<script src="./js/script.js"></script>
 		<title>Tweet academie</title>
@@ -22,7 +21,7 @@
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				<div class="navbar-brand">
 					<img src="./Images/logo.png" style="width: 40px; height: 40px;">
-					<a class="btn btn-primary" href="Register.php" role="button">Register</a>
+					<a class="btn btn-primary" href="register.php" role="button">Register</a>
 					<a class="btn btn-primary" href="">Contact us</a>
 				</div>
 				<form class="form-inline my-2 my-lg-0">
