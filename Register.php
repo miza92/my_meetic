@@ -29,14 +29,14 @@
 				</div>
 				<div class="row">
 					<div class="col-md-3 field-label-responsive">
-						<label for="username">Username *</label>
+						<label for="username">@Username *</label>
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="input-group mb-2 mr-sm-2 mb-sm-0">
 								<div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
 								<input type="text" name="username" class="form-control" id="username"
-								placeholder="Please enter your username" minlength="4" maxlength="40"  required autofocus>
+								placeholder="Please enter your @username" minlength="4" maxlength="40"  required autofocus>
 							</div>
 						</div>
 					</div>
@@ -194,13 +194,13 @@
 				</div>
 				<div class="row">
 					<div class="col-md-3 field-label-responsive">
-						<label for="ville">Ville *</label>
+						<label for="website">Website</label>
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="input-group mb-2 mr-sm-2 mb-sm-0">
 								<div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
-								<input type="text" name="ville" class="form-control" id="ville" placeholder="Veuillez rentrer votre ville" minlength="4" maxlength="20" required autofocus>
+								<input type="url" name="website" class="form-control" id="website" required autofocus>
 							</div>
 						</div>
 					</div>
@@ -213,40 +213,18 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-3 field-label-responsive">
-						<label for="pays">Pays</label>
-					</div>
-					<div class="col-md-6">
-						<div class="form-group">
-							<div class="input-group mb-2 mr-sm-2 mb-sm-0">
-								<div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
-								<input type="text" name="pays" class="form-control" id="pays" placeholder="Veuillez rentrer votre pays" minlength="4" maxlength="20" required autofocus>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3">
-						<div class="form-control-feedback">
-							<span class="text-danger align-middle">
-								<!-- Put name validation error messages here -->
-							</span>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-3 field-label-responsive">
-						<label for="password-confirm">Confirmer le mot de passe *</label>
-					</div>
-					<div class="col-md-6">
-						<div class="form-group">
-							<div class="input-group mb-2 mr-sm-2 mb-sm-0">
-								<div class="input-group-addon" style="width: 2.6rem">
-									<i class="fa fa-repeat"></i>
-								</div>
-								<input type="password" name="password-confirmation" class="form-control" id="password-confirm" placeholder="Confirmer votre mot de passe" minlength="4" maxlength="8" required>
-							</div>
-						</div>
-					</div>
-				</div>
+                    <div class="col-md-3 field-label-responsive">
+                        <label for="theme">Theme</label>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+                                <input type="radio" name ="theme" class="form-control" id="theme" value="white" required autofocus />White
+                                <input type="radio" name ="theme" class="form-control" id="theme" value="black" required autofocus />Black
+                            </div>
+                        </div>
+                    </div>
 				<div class="row">
 					<div class="col-md-3"></div>
 					<div class="col-md-6">
