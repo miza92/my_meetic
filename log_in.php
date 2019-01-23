@@ -73,4 +73,128 @@ class log_in
     }
 }
 
+class change
+{
+    public function change_username()
+    {
+        include 'connexion_pdo.php';
+        $data = new co();
+        $database = $data->test();
+
+        $sql = $database->prepare('UPDATE users SET username=:username WHERE username=:username');
+
+        session_start();
+
+        $username = $_POST['username'];
+        $username = $_SESSION['usename'];
+
+        $sql->bindValue(':username', $email, PDO::PARAM_STR);
+        $sql->bindValue(':username', $city, PDO::PARAM_STR);
+
+        $sql->execute();
+    }
+
+    public function change_display_name()
+    {
+        include 'connexion_pdo.php';
+        $data = new co();
+        $database = $data->test();
+
+        $sql = $database->prepare('UPDATE users SET display_name=:display_name WHERE username=:username');
+
+        session_start();
+
+        $display_name = $_POST['display_name'];
+        $username = $_SESSION['username'];
+
+        $sql->bindValue(':username', $email, PDO::PARAM_STR);
+        $sql->bindValue(':display_name', $lastname, PDO::PARAM_STR);
+
+        $sql->execute();
+    }
+
+    public function change_email()
+    {
+        include 'connexion_pdo.php';
+        $data = new co();
+        $database = $data->test();
+
+        $sql = $database->prepare('UPDATE users SET email=:email WHERE username=:username');
+
+        session_start();
+
+        $email = $_POST['firstname'];
+        $username = $_SESSION['username'];
+
+        $sql->bindValue(':email', $email, PDO::PARAM_STR);
+        $sql->bindValue(':username', $username, PDO::PARAM_STR);
+
+        $sql->execute();
+    }
+
+    public function change_phone()
+    {
+        include 'connexion_pdo.php';
+
+        $data = new co();
+        $database = $data->test();
+
+        $sql = $database->prepare('INSERT INTO users (phone) 
+        VALUES (:phone) WHERE username=:username');
+
+        session_start();
+
+        $phone = $_POST['phone'];
+        $username = $_SESSION['username'];
+
+        $sql->bindValue(':phone', $phone, PDO::PARAM_STR);
+        $sql->bindValue(':username', $username, PDO::PARAM_STR);
+
+        $sql->execute();
+
+    }
+
+    public function change_password()
+    {
+        include 'connexion_pdo.php';
+
+        $data = new co();
+        $database = $data->test();
+
+        $sql = $database->prepare('UPDATE users SET password=:pass WHERE username=:username');
+
+        session_start();
+
+        $pass = $_POST['pwd'];
+        $email = $_SESSION['email'];
+
+        password_hash($pass, PASSWORD_BCRYPT);
+
+        $sql->bindValue(':email', $email, PDO::PARAM_STR);
+        $sql->bindValue(':pass', $pass, PDO::PARAM_STR);
+
+        $sql->execute();
+    }
+
+    public function delete()
+    {
+        include 'connexion_pdo.php';
+
+        $data = new co();
+        $database = $data->test();
+
+        $sql = $database->prepare('UPDATE users SET e_mail=:null_del WHERE username=:username');
+
+        session_start();
+
+        $null = $_POST['delete'];
+        $email = $_SESSION['email'];
+
+        $sql->bindValue(':null_del', $null, PDO::PARAM_NULL);
+        $sql->bindValue(':email', $email, PDO::PARAM_STR);
+
+        $sql->execute();
+    }
+}
+
 ?>
