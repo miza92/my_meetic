@@ -46,8 +46,10 @@ $_SESSION['username'] = $tab['username'];
                     <span class="texteMenu">Edit your account</span>
                 </a>
             </li>
+           
         </ul>
     </div>
 </div>
+
 </body>
 </html>
