@@ -9,17 +9,20 @@ class register
         $data = new co();
         $database = $data->test();
 
-            $sql = $database->prepare('INSERT INTO users (username, display_name, password, email) 
-VALUES (:username, :display_name, :password, :email)');
+            $sql = $database->prepare('INSERT INTO users (username, display_name, users.password, email, 
+            birthdate) 
+VALUES (:username, :display_name, :pass, :email, :birthdate)');
 
             $username = $_POST['username'];
             $display_name = $_POST['display_name'];
             $password = $_POST['password'];
             $email = $_POST['email'];
+            $birthdate = $_POST['birthdate'];
 
             $password = password_hash($password, PASSWORD_BCRYPT);
+
             $sql->execute([':username' => $username, ':display_name' => $display_name, 
-            ':password' => $password, ':email' => $email]);
+            ':pass' => $password, ':email' => $email, ':birthdate' => $birthdate]);
     }
 }
 
@@ -107,8 +110,8 @@ class change
         $display_name = $_POST['display_name'];
         $username = $_SESSION['username'];
 
-        $sql->bindValue(':username', $email, PDO::PARAM_STR);
-        $sql->bindValue(':display_name', $lastname, PDO::PARAM_STR);
+        $sql->bindValue(':username', $username, PDO::PARAM_STR);
+        $sql->bindValue(':display_name', $display_name, PDO::PARAM_STR);
 
         $sql->execute();
     }
@@ -123,7 +126,7 @@ class change
 
         session_start();
 
-        $email = $_POST['firstname'];
+        $email = $_POST['email'];
         $username = $_SESSION['username'];
 
         $sql->bindValue(':email', $email, PDO::PARAM_STR);
@@ -154,24 +157,72 @@ class change
 
     }
 
-    public function change_password()
+    public function change_localisation()
     {
         include 'connexion_pdo.php';
 
         $data = new co();
         $database = $data->test();
 
-        $sql = $database->prepare('UPDATE users SET password=:pass WHERE username=:username');
+        $sql = $database->prepare('INSERT INTO users (localisation) 
+        VALUES (:localisation) WHERE username=:username');
 
         session_start();
 
-        $pass = $_POST['pwd'];
-        $email = $_SESSION['email'];
+        $localisation = $_POST['localisation'];
+        $username = $_SESSION['username'];
 
         password_hash($pass, PASSWORD_BCRYPT);
 
-        $sql->bindValue(':email', $email, PDO::PARAM_STR);
-        $sql->bindValue(':pass', $pass, PDO::PARAM_STR);
+        $sql->bindValue(':username', $username, PDO::PARAM_STR);
+        $sql->bindValue(':localisation', $localisation, PDO::PARAM_STR);
+
+        $sql->execute();
+    }
+
+
+    public function change_bio()
+    {
+        include 'connexion_pdo.php';
+
+        $data = new co();
+        $database = $data->test();
+
+        $sql = $database->prepare('INSERT INTO users (bio) 
+        VALUES (:bio) WHERE username=:username');
+
+        session_start();
+
+        $bio = $_POST['bio'];
+        $username = $_SESSION['username'];
+
+        password_hash($pass, PASSWORD_BCRYPT);
+
+        $sql->bindValue(':username', $username, PDO::PARAM_STR);
+        $sql->bindValue(':bio', $bio, PDO::PARAM_STR);
+
+        $sql->execute();
+    }
+
+    public function change_website()
+    {
+        include 'connexion_pdo.php';
+
+        $data = new co();
+        $database = $data->test();
+
+        $sql = $database->prepare('INSERT INTO users (website) 
+        VALUES (:website) WHERE username=:username');
+
+        session_start();
+
+        $website = $_POST['website'];
+        $username = $_SESSION['username'];
+
+        password_hash($pass, PASSWORD_BCRYPT);
+
+        $sql->bindValue(':username', $username, PDO::PARAM_STR);
+        $sql->bindValue(':website', $website, PDO::PARAM_STR);
 
         $sql->execute();
     }
