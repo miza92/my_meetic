@@ -20,8 +20,8 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="navbar-brand">
                 <img src="./img/logo.png" style="width: 40px; height: 40px;">
-                <a class="btn btn-primary" href="index.php" role="button">Login</a>
-                <a class="btn btn-primary" href="index.php">Home</a>
+                <a class="btn btn-primary" href="index_page.php" role="button">Login</a>
+                <a class="btn btn-primary" href="index_page.php">Home</a>
             </div>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="search">
@@ -41,7 +41,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-3 field-label-responsive">
-						<label for="username">@Username *</label>
+						<label for="username">@Username</label>
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
@@ -56,7 +56,6 @@
 					<div class="col-md-3">
 						<div class="form-control-feedback">
 							<span class="text-danger align-middle">
-								Veuillez remplir tous les Champs requis *
 							<!-- Les champs doivent contenir une langeur minimin
 							de 4 caractères et maximum de 40 caractères: -->
 							</span>
@@ -65,7 +64,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-3 field-label-responsive">
-						<label for="display_name">Display Name *</label>
+						<label for="display_name">Display Name</label>
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
@@ -87,7 +86,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-3 field-label-responsive">
-						<label for="email">E-Mail *</label>
+						<label for="email">E-Mail</label>
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
@@ -107,7 +106,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-3 field-label-responsive">
-						<label for="password">Password *</label>
+						<label for="password">Password</label>
 					</div>
 					<div class="col-md-6">
 						<div class="form-group has-danger">
@@ -122,8 +121,27 @@
 						<div class="form-control-feedback">
 							<span class="text-danger align-middle">
 								<i class="fa fa-close">
-								<!-- Veuillez remplir tous les Champs requis * -->
 								</i>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3 field-label-responsive">
+						<label for="birthdate">Date of birth</label>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<div class="input-group mb-2 mr-sm-2 mb-sm-0">
+								<div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+								<input type="date" name="birthdate" class="form-control" id="birthdate">
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="form-control-feedback">
+							<span class="text-danger align-middle">
+								<!-- Put name validation error messages here -->
 							</span>
 						</div>
 					</div>
@@ -138,7 +156,7 @@
 			</form>
 			<?php include 'log_in.php';
 		if (isset($_POST['display_name']) && isset($_POST['username']) 
-		&& isset($_POST['password']) && isset($_POST['email']))
+		&& isset($_POST['password']) && isset($_POST['email']) && isset($_POST['birthdate']))
 		{
             $register = new register();
             $register->inscription();
