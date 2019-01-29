@@ -1,3 +1,11 @@
+<?php include 'log_in.php';
+		
+            $register = new register();
+            $register->inscription();
+            echo "<script>alert('You have successfully registered !')</script>";
+		
+		?>
+		
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -154,15 +162,7 @@
 					</div>
 				</div>
 			</form>
-			<?php include 'log_in.php';
-		if (isset($_POST['display_name']) && isset($_POST['username']) 
-		&& isset($_POST['password']) && isset($_POST['email']) && isset($_POST['birthdate']))
-		{
-            $register = new register();
-            $register->inscription();
-            echo "<script>alert('You have successfully registered !')</script>";
-		}
-        ?>
+			
 		</div>
 	</body>
 </html>

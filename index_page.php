@@ -45,7 +45,7 @@
                     <div class="shape6"></div>
                     <div class="shape7"></div>
 						<div class="float">
-							<form class="form" action="index.php" method="post">
+							<form class="form" action="index_page.php" method="post">
 								<div class="form-group">
 									<label for="username" class="text-white">Username:</label><br>
 									<input type="text" name="username" id="username" class="form-control">
@@ -62,9 +62,8 @@
 
                             if (isset($_POST['username']) && isset($_POST['password'])) {
                                 $login = new log_in();
-                                $true = $login->log();
-                                if($true == true) {
-                                    header("Location: home.php");
+                                if($login->log()) {
+                                    header("Location: home_page.php");
                                 }
                                 else {
                                     echo "<script>alert('Invalid username or password')</script>";
