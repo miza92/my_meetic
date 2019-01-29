@@ -4,6 +4,7 @@ include 'log_in.php';
 session_start();
 $session = new log_in();
 $tab = $session->session();
+$_SESSION['id_user'] = $tab['id_user']; 
 $_SESSION['username'] = $tab['username'];
 $_SESSION['display_name'] = $tab['display_name'];
 $_SESSION['email'] = $tab['email'];
