@@ -3,7 +3,9 @@ include 'log_in.php';
 session_start();
 $session = new log_in();
 $tab = $session->session();
-$SESSION['id_user'] = $tab['id_user']; 
+$tweet = new tweete();
+$tweet->tweeter();
+$_SESSION['id_user'] = $tab['id_user']; 
 $_SESSION['username'] = $tab['username'];
 $_SESSION['display_name'] = $tab['display_name'];
 $_SESSION['email'] = $tab['email'];
@@ -118,7 +120,7 @@ $_SESSION['website'] = $tab['website'];
                         <div class="col-md-6">
                             <h2>Write a new Tweet</h2>
                             <hr>
-                            <textarea name="commentaire" minlength="2" maxlength="140" rows="4" cols="50"></textarea>
+                            <textarea name="tweeter" minlength="2" maxlength="140" rows="4" cols="50"></textarea>
                             <br />
                             <input type="hidden" name="invisible" value="140" /><br />
                             <input type="submit" class="btn btn-primary btn-sm active" name="soumettre" value="OK" />
