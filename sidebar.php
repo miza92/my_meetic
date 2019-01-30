@@ -26,6 +26,10 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
           <script src='https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'></script>
+          <style>
+      #toggle{height:auto; background:#eee; border:1px solid #900; margin:1em;text-align:center}
+      #toggle p{text-align:center;padding:0}
+</style>
         <title>Twitter</title>  
     </head>
 <body>
@@ -35,7 +39,7 @@
             <img src="./img/logo.png" style="width: 40px; height: 40px;">
             <a class="btn btn-primary" href="index.php" role="button">Home</a>
             <a class="btn btn-primary" href="">Contact us</a>
-            <a class="btn btn-primary" href="hasht.php">Tweet</a>
+            <a href="#" class="btn btn-primary btn-md active" id="edit_account">Tweeter</a>
         </div>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="search">
@@ -44,6 +48,7 @@
 
     </nav>
 </header>
+
    <div id="wrapper">
 
         <!-- Sidebar -->
@@ -105,3 +110,41 @@
         $("#wrapper").toggleClass("toggled");
     });
     </script>
+
+    <script>
+       jQuery(document).ready(function()
+       {
+          // On cache la zone de texte
+          jQuery('#edit').hide();
+          // toggle() lorsque le lien avec l'ID #edit_account est cliqué
+          jQuery('a#edit_account').click(function()
+         {
+             jQuery('#edit').toggle();
+             return false;
+          });
+       });
+</script>
+<div id="edit">
+<div class="container">
+<form class="form-horizontal" role="form" method="POST" action="">
+<div class="row">
+<div class="col-md-3"></div>
+<div class="col-md-6">
+<h2>Write a new Tweet</h2>
+<hr>
+<textarea name="commentaire" minlength="2" maxlength="140" rows="4" cols="50"></textarea>
+<br />
+<input type="hidden" name="invisible" value="140" /><br />
+<input type="submit" class="btn btn-primary btn-sm active" name="soumettre" value="OK" />
+<input type="reset" class="btn btn-primary btn-sm active" name="effacer" value="wipe off" />
+<input type="button" class="btn btn-primary btn-sm active" name="action" value="Cancel" /></div>
+</div>
+<div class="row">
+<div class="col-md-3 field-label-responsive">
+</div>
+</div>
+</form>
+</div>
+</div>
+</body>
+</html>
