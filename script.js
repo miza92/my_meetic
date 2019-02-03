@@ -4,7 +4,7 @@ $(document).ready(function() {
         dataType: "json",
         success: function (data) {
             console.log(data);
-            $.each(data, function(value){
+            $.each(data, function(key, value){
                 $('#tweet').append(value.content + value.tweet_date);
             })
            

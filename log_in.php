@@ -245,32 +245,3 @@ class tweet
     return $result;
 }
 }
-/*class tweete
-{
-   public function tweeter(){
-
-       $data = new co();
-       $database = $data->test();
-
-       $sql = $database->prepare('SELECT * FROM users INNER JOIN tweets ON users.id_user = tweets.id_user');
-       $sql->execute();
-
-       if (isset($_POST["tweet"]) && !empty($_POST["tweet"])) {
-
-           $sql = $database->prepare('INSERT INTO tweets (content, id_user, tweet_date) VALUES (:content, :id_user, :tweet_date)');
-
-           $content = $_POST['tweet'];
-           $tweet_date = date("Y-m-d H:i:s");
-           $id_user = $_SESSION['id_user'];
-
-
-           $sql->execute(
-               [
-                   ':content' => $content,
-                   ':id_user' => $id_user,
-                   ':tweet_date' => $tweet_date
-               ]
-           );
-       }
-   }
-}*/
