@@ -21,28 +21,28 @@ $_SESSION['website'] = $tab['website'];
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="Site de rencontre"/>
         <link rel="icon" href="./img/logo.png"/>
-        <link rel="stylesheet" type="text/css" href="sidebar.css"> 
+        <link rel="stylesheet" type="text/css" href="./css/sidebar.css"> 
+        <link rel="stylesheet" type="text/css" href="./css/styles.css"> 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <script src='https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'></script>
         <title>Twitter</title>  
     </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="navbar-brand">
-                <img src="./img/logo.png" style="width: 40px; height: 40px;">
-                <a class="btn btn-primary" href="index.php" role="button">Home</a>
-                <a class="btn btn-primary" href="">Contact us</a>
-                <a href="#" class="btn btn-primary btn-md active" id="edit_account">Tweeter</a>
-            </div>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="search">
-                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">search</button>
-            </form>
-        </nav>
-    </header>
-    <body>
+    <body class="body">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="navbar-brand">
+                    <img src="./img/logo.png" style="width: 40px; height: 40px;">
+                    <a class="btn btn-primary" href="index.php" role="button">Home</a>
+                    <a class="btn btn-primary" href="">Contact us</a>
+                    <a href="#" class="btn btn-primary" id="edit_account">Tweeter</a>
+                </div>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="search">
+                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">search</button>
+                </form>
+            </nav>
+        </header>
         <div id="wrapper">
         <!-- Sidebar -->
             <div id="sidebar-wrapper">
@@ -83,10 +83,43 @@ $_SESSION['website'] = $tab['website'];
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h1>BLALALALA</h1>
-                            <p>BLALALABAAB.</p>
-                            <p>BLABLABLA<code>BLABLA</code>.</p>
-                            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle sidebar</a>
+                            <nav class="navbar navbar-dark bg-primary">
+                                <form class="form-inline my-2 my-lg-0">
+                                    <button class="btn btn-primary my-2 my-sm-0" type="submit">Go</button>
+                                    <input class="form-control col-8" type="search" placeholder="What's new ?">
+                                </form>
+                            </nav>  
+                            <br />                 
+                            <div class="card w-75 text-left" style="width: 18rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    <div class ="text-right">
+                                        <a href="#" class="btn btn-primary">follower</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="card w-75 text-left" style="width: 18rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    <div class ="text-right">
+                                        <a href="#" class="btn btn-primary">follower</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="card w-75 text-left" style="width: 18rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    <div class ="text-right">
+                                        <a href="#" class="btn btn-primary">follower</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -120,10 +153,9 @@ $_SESSION['website'] = $tab['website'];
                         <div class="col-md-6">
                             <h2>Write a new Tweet</h2>
                             <hr>
-                            <textarea name="tweeter" minlength="2" maxlength="140" rows="4" cols="50"></textarea>
+                            <textarea name="tweeter" id="tweeter" minlength="2" maxlength="140" rows="4" cols="50"></textarea>
                             <br />
-                            <input type="hidden" name="invisible" value="140" /><br />
-                            <input type="submit" class="btn btn-primary btn-sm active" name="soumettre" value="OK" />
+                            <button type="submit" class="btn btn-primary btn-sm">OK</button>
                             <input type="reset" class="btn btn-primary btn-sm active" name="effacer" value="wipe off" />
                             <input type="button" class="btn btn-primary btn-sm active" name="action" value="Cancel" />
                         </div>
