@@ -1,19 +1,13 @@
-/*$(function () {
-
-    $('#edit_account').click(function(){
-        $(' #edit').toggle(400);
-    
-    });
-
-    });*/
-
-$(function(){
-
-    $('#theme_black').click(function(){
-
-        $('body').addClass('.body_black')
-    });
-
-});
-
-
+$(document).ready(function() {
+    $.ajax({
+        url : "get_tweets.php",
+        dataType: "json",
+        success: function (data) {
+            console.log(data);
+            $.each(data, function(value){
+                $('#tweet').append(value.content + value.tweet_date);
+            })
+           
+        }
+    })
+})

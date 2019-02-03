@@ -4,6 +4,7 @@ include 'log_in.php';
 session_start();
 $session = new log_in();
 $tab = $session->session();
+$_SESSION['id_user'] = $tab['id_user']; 
 $_SESSION['username'] = $tab['username'];
 $_SESSION['display_name'] = $tab['display_name'];
 $_SESSION['email'] = $tab['email'];
@@ -43,11 +44,11 @@ $_SESSION['email'] = $tab['email'];
 	<body class="body">
 
 
-<form methode="post" action="#">
-    <textarea name="tweet" maxlength="140"></textarea>
-    <button type="submit" name="submit_tweet">Tweet</button>
+<form method="post" action="tweet.php">
+    <input name="content" maxlength="140">
+    <button type="submit" value ="submit" name="submit_tweet">Tweet</button>
 </form>
-<?php include 'edit_form.php';?>
+<?php include 'post_tweet.php';?>
 
 
     </body>

@@ -1,10 +1,11 @@
 <?php
 
 include 'log_in.php';
+include 'sign_out.php'; 
 session_start();
 $session = new log_in();
 $tab = $session->session();
-$_SESSION['id_user'] = $tab['id_user']; 
+$_SESSION['id_user'] = $tab['id_user'];
 $_SESSION['username'] = $tab['username'];
 $_SESSION['display_name'] = $tab['display_name'];
 $_SESSION['email'] = $tab['email'];
@@ -22,6 +23,8 @@ $_SESSION['email'] = $tab['email'];
 		<link rel="stylesheet" type="text/css" href="./css/bootstrap-reboot.min.css">
 		<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 		<!-- CDN -->
+		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
 		<!-- Bootstrap CSS --> 
 		<link rel="stylesheet" 
 		href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
@@ -32,7 +35,9 @@ $_SESSION['email'] = $tab['email'];
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="navbar-brand">
                 <img src="./img/logo.png" style="width: 40px; height: 40px;">
-                <a class="btn btn-primary" href="index_page.php" role="button">Sign Out</a>
+                <form method="post" action="">
+            <button type="submit" class="btn btn-primary" name="sign_out">Sign Out</button>
+            </form>
                 <a class="btn btn-primary" href="home_page.php">Home</a>
             </div>
             <form class="form-inline my-2 my-lg-0">
@@ -41,7 +46,7 @@ $_SESSION['email'] = $tab['email'];
             </form>
         </nav>
 	</head>
-	<body class="body">
+	<body>
 		
 		<div class="container">
 			<form class="form-horizontal" role="form" method='post' action="">
@@ -62,7 +67,7 @@ $_SESSION['email'] = $tab['email'];
 								<div class="input-group-addon" style="width: 2.6rem">
 								<i class="fa fa-user"></i></div>
 								<input type="text" name="username" class="form-control" id="username"
-								placeholder="<?php echo $_SESSION['username']?>"
+								placeholder="<?php echo $_SESSION['username'] ?>"
 								 minlength="4" maxlength="40">
 							</div>
 						</div>
@@ -87,7 +92,7 @@ $_SESSION['email'] = $tab['email'];
 								<i class="fa fa-user"></i></div>
 								<input type="text" name="display_name" class="form-control" 
 								id="display_name"
-								placeholder="<?php echo $_SESSION['display_name']?>" 
+								placeholder="<?php echo $_SESSION['display_name'] ?>" 
 								 maxlength="40">
 							</div>
 						</div>
@@ -110,7 +115,7 @@ $_SESSION['email'] = $tab['email'];
 								<div class="input-group-addon" style="width: 2.6rem">
 								<i class="fa fa-at"></i></div>
 								<input type="email" name="email" class="form-control" id="email" 
-								placeholder="<?php echo $_SESSION['email']?>">
+								placeholder="<?php echo $_SESSION['email'] ?>">
 							</div>
 						</div>
 					</div>
@@ -278,12 +283,21 @@ $_SESSION['email'] = $tab['email'];
 					</div>
 				</div>
 			</form>
-			<?php include 'edit_form.php';?>	
+			<?php include 'edit_form.php'; ?>	
 		</div>
-		<script
-        src="https://code.jquery.com/jquery-3.3.1.js"
-        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-        crossorigin="anonymous"></script>
-        <script src="script.js"></script>
+		<script>
+			$(document).ready(function(){
+			$('#theme_black').click(function(){
+				$('body').removeClass('body_white');
+				$('body').addClass('body_black');
+			})
+
+			$('#theme_white').click(function(){
+				$('body').removeClass('body_black');
+				$('body').addClass('body_white');
+			})
+
+			});
+		</script>
 	</body>
 </html>

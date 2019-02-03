@@ -43,10 +43,5 @@ if(isset($_POST['save'])) {
             $modif = new change();
             $modif->change_website();
             echo "<script>alert('Your updates have been done successfully ! ')</script>";
-        } 
-
-        if(isset($_POST['theme_black']))
-        {
-            include 'edit.php'; 
         }
     }
